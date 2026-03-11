@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import React,{useEffect,useState} from "react";
+import {useParams,useNavigate} from "react-router-dom";
 
-function UpdateProduct(){
+const UpdateProduct = ()=>{
 
 const [name,setName] = useState("");
 const [price,setPrice] = useState("");
@@ -37,11 +37,16 @@ headers:{
 "Content-Type":"application/json"
 },
 
-body:JSON.stringify({name,price,category,company})
+body:JSON.stringify({
+name,
+price,
+category,
+company
+})
 
 })
 
-navigate("/");
+navigate("/products")
 
 }
 
@@ -52,26 +57,30 @@ return(
 <h2>Update Product</h2>
 
 <input
-className="form-control mb-3"
+type="text"
 value={name}
+className="form-control mb-3"
 onChange={(e)=>setName(e.target.value)}
 />
 
 <input
-className="form-control mb-3"
+type="text"
 value={price}
+className="form-control mb-3"
 onChange={(e)=>setPrice(e.target.value)}
 />
 
 <input
-className="form-control mb-3"
+type="text"
 value={category}
+className="form-control mb-3"
 onChange={(e)=>setCategory(e.target.value)}
 />
 
 <input
-className="form-control mb-3"
+type="text"
 value={company}
+className="form-control mb-3"
 onChange={(e)=>setCompany(e.target.value)}
 />
 

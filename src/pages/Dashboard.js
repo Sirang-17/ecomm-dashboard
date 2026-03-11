@@ -1,30 +1,56 @@
 import React from "react";
 
-function Dashboard() {
+const Dashboard = ()=>{
 
-  const user = JSON.parse(localStorage.getItem("user"));
+return(
 
-  return (
+<div className="dashboard container">
 
-    <div className="container mt-5">
+<h1 className="mb-4">
+Product Management Dashboard
+</h1>
 
-      <h2>Dashboard</h2>
+<div className="row">
 
-      <div className="card p-4 mt-3">
+<div className="col-md-4">
 
-        <h4>Welcome {user?.name}</h4>
+<div className="card p-4">
 
-        <p>
-          This is your Ecommerce Admin Dashboard.
-          From here you can manage products, add new items,
-          update product details, and remove products.
-        </p>
+<h4>Total Products</h4>
+<p>Manage all your products easily.</p>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
-  );
+<div className="col-md-4">
+
+<div className="card p-4">
+
+<h4>Add Products</h4>
+<p>Add new items to your inventory.</p>
+
+</div>
+
+</div>
+
+<div className="col-md-4">
+
+<div className="card p-4">
+
+<h4>Search Products</h4>
+<p>Quickly find products using search.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+)
+
 }
 
-export default Dashboard;
+export default Dashboard

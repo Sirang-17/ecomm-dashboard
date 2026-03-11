@@ -1,49 +1,18 @@
 {
   "users": [
     {
-      "id": "e445",
-      "name": "peter",
+      "id": "6035",
+      "name": "admin",
+      "email": "peter@test.com",
+      "password": "peter123"
+    },
+    {
+      "id": "c40a",
+      "name": "",
       "email": "peter@test.com",
       "password": "peter123"
     }
   ],
-  "admins": [
-    {
-      "id": "1",
-      "name": "Admin",
-      "email": "admin@gmail.com",
-      "password": "12345"
-    }
-  ],
-  "products": [
-    {
-      "name": "Laptop",
-      "price": "900",
-      "category": "Electronics",
-      "company": "Dell",
-      "id": "1"
-    },
-    {
-      "id": "2",
-      "name": "Mobile",
-      "price": "500",
-      "category": "Electronics",
-      "company": "Samsung"
-    },
-    {
-      "id": "3",
-      "name": "Headphones",
-      "price": "80",
-      "category": "Accessories",
-      "company": "Sony"
-    },
-    {
-      "id": "4",
-      "name": "LED TV",
-      "price": "From $500 to $25000",
-      "category": "budget-friendly HD and Full HD sets to advanced 4K/8K Ultra HD, QLED, and Mini-LED models",
-      "company": "Sony"
-    }
-  ],
+  "products": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

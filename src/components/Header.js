@@ -1,81 +1,101 @@
-import { Link, useNavigate } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React from "react";
+import {Link,useNavigate} from "react-router-dom";
+import {FaBox,FaPlus,FaSearch,FaSignOutAlt} from "react-icons/fa";
 
-function Header() {
-  const [user, setUser] = useState(null);
-  const navigate = useNavigate();
+const Header = ()=>{
 
-  // Fetch logged-in user from localStorage
-  useEffect(() => {
-    const loggedUser = JSON.parse(localStorage.getItem("user"));
-    if (loggedUser) {
-      setUser(loggedUser);
-    }
-  }, []);
+const navigate = useNavigate();
+const auth = localStorage.getItem("user");
 
-  const logout = () => {
-    localStorage.clear();
-    navigate("/login");
-  };
+const toggleDarkMode = ()=>{
+document.body.classList.toggle("dark")
+}
 
-  return (
-    <nav className="navbar navbar-dark bg-dark">
-      <div className="container d-flex justify-content-between align-items-center">
+const logout = ()=>{
+localStorage.clear();
+navigate("/login");
+}
 
-        <Link className="navbar-brand text-white" to="/">
-          Ecommerce Dashboard
-        </Link>
 
-        <div className="d-flex align-items-center">
+return(
 
-          {user ? (
-            <div className="dropdown">
-              {/* User Name / Email */}
-              <button
-                className="btn btn-secondary dropdown-toggle"
-                type="button"
-                id="userMenu"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                {user.name}
-              </button>
+<nav className="navbar navbar-expand-lg navbar-dark">
 
-              {/* Dropdown Menu */}
-              <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
-                <li>
-                  <Link className="dropdown-item" to="/">
-                    Dashboard
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/add">
-                    Add Product
-                  </Link>
-                </li>
-                <li><hr className="dropdown-divider" /></li>
-                <li>
-                  <button className="dropdown-item text-danger" onClick={logout}>
-                    Logout
-                  </button>
-                </li>
-              </ul>
-            </div>
-          ) : (
-            <>
-              <Link className="btn btn-outline-light me-2" to="/login">
-                Login
-              </Link>
-              <Link className="btn btn-outline-light" to="/register">
-                Register
-              </Link>
-            </>
-          )}
+<div className="container">
 
-        </div>
-      </div>
-    </nav>
-  );
+<Link className="navbar-brand" to="/">
+ProductDashboard
+</Link>
+
+<ul className="navbar-nav ms-auto">
+
+{
+auth ?
+
+<>
+
+<li className="nav-item">
+<Link className="nav-link" to="/products">
+<FaBox/> Products
+</Link>
+</li>
+
+<li className="nav-item">
+<Link className="nav-link" to="/add-product">
+<FaPlus/> Add Product
+</Link>
+</li>
+
+<li className="nav-item">
+<button
+className="btn btn-secondary ms-2"
+onClick={toggleDarkMode}
+>
+Dark Mode
+</button>
+</li>
+
+<li className="nav-item">
+<Link className="nav-link" to="/search">
+<FaSearch/> Search
+</Link>
+</li>
+
+<li className="nav-item">
+<button
+className="btn btn-danger ms-3"
+onClick={logout}
+>
+<FaSignOutAlt/> Logout
+</button>
+</li>
+
+</>
+
+:
+
+<>
+
+<li className="nav-item">
+<Link className="nav-link" to="/login">Login</Link>
+</li>
+
+<li className="nav-item">
+<Link className="nav-link" to="/register">Register</Link>
+</li>
+
+</>
+
+}
+
+</ul>
+
+</div>
+
+</nav>
+
+)
+
 }
 
 export default Header;

@@ -1,10 +1,11 @@
-import { Navigate, Outlet } from "react-router-dom";
+import React from "react";
+import {Navigate, Outlet} from "react-router-dom";
 
-function Protected(){
+const Protected = ()=>{
 
-  const auth = localStorage.getItem("user");
+const auth = localStorage.getItem("user");
 
-  return auth ? <Outlet /> : <Navigate to="/login" />
+return auth ? <Outlet/> : <Navigate to="/login"/>
 
 }
 

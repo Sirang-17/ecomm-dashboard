@@ -1,0 +1,74 @@
+body{
+background:#f5f7fb;
+font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+
+.navbar{
+background:linear-gradient(90deg,#667eea,#764ba2);
+}
+
+.navbar-brand{
+font-weight:bold;
+font-size:22px;
+}
+
+.nav-link{
+color:white !important;
+font-weight:500;
+}
+
+/* Dashboard */
+
+.dashboard{
+padding:40px;
+}
+
+.card{
+border:none;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* Buttons */
+
+.btn-primary{
+background:#667eea;
+border:none;
+}
+
+.btn-primary:hover{
+background:#5563d1;
+}
+
+/* Form */
+
+input{
+border-radius:8px !important;
+}
+
+/* Table */
+
+.table{
+background:white;
+border-radius:10px;
+overflow:hidden;
+}
+
+.table th{
+background:#667eea;
+color:white;
+}
+
+/* Search Box */
+
+.search-box{
+width:350px;
+margin-bottom:20px;
+}
